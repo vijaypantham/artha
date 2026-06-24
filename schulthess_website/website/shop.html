@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schulthess Premium Appliance Catalog | Swiss Precision Laundry Products</title>
+  <meta name="description" content="Official Schulthess premium appliance catalog. Explore Swiss-engineered washing machines, tumble dryers, FLOW signature detergents, and laundry accessories.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="shop-body">
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    SWISS QUALITY LAUNDRY SOLUTIONS SINCE 1845 | EXCLUSIVE NATIONAL DISTRIBUTOR FOR INDIA
+  </div>
+
+  <!-- GLOBAL NAVBAR -->
+  <nav class="navbar" id="global-nav" style="position: sticky; top: 0;">
+    <div class="container">
+      <a href="index.html" class="logo-container" id="nav-logo">
+        <img src="images/Schulthess_Logo_20_blau_schwarz.svg" alt="Schulthess" style="height: 38px;">
+      </a>
+
+      <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html" class="nav-link" id="nav-link-home">Home</a></li>
+        <li><a href="shop.html" class="nav-link active" id="nav-link-shop">Appliance Catalog</a></li>
+        <li><a href="products.html" class="nav-link" id="nav-link-products">Products</a></li>
+        <li><a href="about.html" class="nav-link" id="nav-link-about">About Us</a></li>
+        <li><a href="contact.html" class="nav-link" id="nav-link-contact">Contact Us</a></li>
+      </ul>
+
+      <!-- SEARCH QUICK ACTIONS -->
+      <div class="nav-actions">
+        <div class="search-box">
+          <input type="text" class="search-input" id="shop-search" placeholder="Search catalog..." oninput="handleSearch(this.value)">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SLIDESHOW CAROUSEL -->
+  <div class="slideshow-container has-announcement">
+    <!-- Slide 1 -->
+    <div class="slide active" style="background-image: url('images/Solid_Gold_Inszenierung_Room1.jpg');">
+      <div class="container">
+        <div class="slide-content">
+          <span class="slide-tag">Schulthess India Shop</span>
+          <h1 class="slide-title">Premium Swiss Laundry Care</h1>
+          <p class="slide-descr">Discover the elite washing technology pioneer from Switzerland since 1845. Invest in machines built to last 30,000 cycles, and signature detergents tailored for ultimate garment preservation.</p>
+          <a href="#products-section" class="btn btn-primary" onclick="setCategoryFilter('all')">Shop Entire Collection</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" style="background-image: url('images/Titan_Rock_Inszenierung_Room2.jpg');">
+      <div class="container">
+        <div class="slide-content">
+          <span class="slide-tag">Limited Designer Line</span>
+          <h1 class="slide-title">The Gold Collection</h1>
+          <p class="slide-descr">Statement pieces that make aesthetic hearts beat faster. Elegant designer housing in Titan Rock, Solid Gold, and Ever Rose finishes, packed with our fastest, eco-efficient programmes.</p>
+          <a href="#products-section" class="btn btn-primary" onclick="setCategoryFilter('washing-machines')">Explore Gold Collection</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" style="background-image: url('images/Ever_Rose_Inszenierung_Room3.jpg');">
+      <div class="container">
+        <div class="slide-content">
+          <span class="slide-tag">Premium Care Consumables</span>
+          <h1 class="slide-title">FLOW Signature Scents</h1>
+          <p class="slide-descr">Liquid detergents and refresher sprays crafted from 100% natural, biodegradable ingredients. Infuses fabrics with an elegant, unobtrusive scent that stands out.</p>
+          <a href="#products-section" class="btn btn-primary" onclick="setCategoryFilter('flow-detergents')">Discover FLOW Scents</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slideshow navigation -->
+    <button class="slider-arrow slider-arrow-left" onclick="changeSlide(-1)">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="slider-arrow slider-arrow-right" onclick="changeSlide(1)">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- Indicators -->
+    <div class="slider-dots">
+      <button class="slider-dot active" onclick="setSlide(0)"></button>
+      <button class="slider-dot" onclick="setSlide(1)"></button>
+      <button class="slider-dot" onclick="setSlide(2)"></button>
+    </div>
+  </div>
+
+  <!-- SHOP SECTION -->
+  <section class="shop-section section-padding" id="products-section">
+    <div class="container">
+      <div class="shop-header">
+        <span class="section-tag" style="color: var(--schulthess-blue);">Official Online Catalog</span>
+        <h2 class="heading-md" style="margin-bottom: 0.5rem;">Select Your Premium Solution</h2>
+        <p class="feature-descr" style="max-width: 600px; margin: 0 auto;">Swiss quality made accessible. Click quick view for tech details, select color swatches, or request an instant project quote.</p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="filter-tabs" id="shop-tabs">
+        <button class="filter-btn active" onclick="setCategoryFilter('all', this)">All Products</button>
+        <button class="filter-btn" onclick="setCategoryFilter('washing-machines', this)">Washing Machines</button>
+        <button class="filter-btn" onclick="setCategoryFilter('tumble-dryers', this)">Tumble Dryers</button>
+        <button class="filter-btn" onclick="setCategoryFilter('flow-detergents', this)">FLOW Detergents</button>
+        <button class="filter-btn" onclick="setCategoryFilter('accessories', this)">Accessories</button>
+        <button class="filter-btn" onclick="setCategoryFilter('promotions', this)">Promotions & Offers</button>
+      </div>
+
+      <!-- PRODUCTS CATALOG GRID -->
+      <div class="products-grid" id="catalog-grid">
+        <!-- Products generated dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK VIEW DETAIL MODAL -->
+  <div class="modal-overlay" id="product-modal" onclick="closeProductModal(event)">
+    <div class="modal-container" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeProductModal(null)">&times;</button>
+      <div class="modal-grid" id="modal-content-area">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="footer" id="global-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand" id="footer-logo">
+          <div class="footer-logo-text">SCHULTHESS<span>.IN</span></div>
+          <p class="footer-tagline">Spinning for joy. Swiss precision engineering for luxury homes and heavy industries.</p>
+          <div class="swiss-made-badge" id="swiss-made">
+            <span class="swiss-cross">+</span>
+            <span>Swiss Made Quality Since 1845</span>
+          </div>
+        </div>
+        <div class="footer-nav" id="footer-links-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Appliance Catalog</a></li>
+            <li><a href="products.html">Product Range</a></li>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-partner" id="footer-partner-col">
+          <h4 class="footer-col-title">Indian Channel Partner</h4>
+          <div class="footer-partner-card">
+            <img src="images/swisstech_logo.jpg" alt="Swisstech Innovations" class="footer-partner-logo">
+            <h4>Swisstech Innovations Pvt. Ltd.</h4>
+            <p>Sole Authorised Channel Partner and importer of Schulthess Switzerland in India.</p>
+            <p><strong>HQ:</strong> Banjara Hills, Hyderabad, India</p>
+            <p><strong>Support:</strong> +91 88869 55099 / +91 98856 55000</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Schulthess Maschinen AG. All rights reserved. Managed in India by Swisstech Innovation Pvt. Ltd.</p>
+        <p>Built under official Schulthess Marketing & Brand Guidelines.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SHOP LOGIC & ANIMATIONS -->
+  <script>
+    // --- SLIDESHOW SLIDER LOGIC ---
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let slideInterval = setInterval(() => changeSlide(1), 5000);
+
+    function showSlide(index) {
+      if (index >= slides.length) index = 0;
+      if (index < 0) index = slides.length - 1;
+      
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentSlideIndex = index;
+    }
+
+    function changeSlide(direction) {
+      clearInterval(slideInterval);
+      showSlide(currentSlideIndex + direction);
+      slideInterval = setInterval(() => changeSlide(1), 5000);
+    }
+
+    function setSlide(index) {
+      clearInterval(slideInterval);
+      showSlide(index);
+      slideInterval = setInterval(() => changeSlide(1), 5000);
+    }
+
+    // --- PRODUCT CATALOG DATA ---
+    const catalogProducts = [
+      {
+        id: "wa-gold-rose",
+        title: "Schulthess Gold: Ever Rose",
+        category: "washing-machines",
+        price: 264900,
+        specs: "8 kg capacity | 1600 rpm | Energy A",
+        desc: "Stylish on the outside, engineered to perfection on the inside. The Schulthess Gold Collection features trendy designer colors and premium features like 3D washing, smart program groups, and high-efficiency resource management.",
+        img: "images/Gold_WA_Ever_Rose_640x820px.png",
+        swatches: [
+          { name: "rose", color: "#b76e79", img: "images/Gold_WA_Ever_Rose_640x820px.png" },
+          { name: "gold", color: "#d4af37", img: "images/Gold_WT_Solid_Gold_Name-qtuims4980sc7rn3sm050axdy9lxfiygt25m5j2ock.png" },
+          { name: "titan", color: "#555d61", img: "images/Gold_WA_Titan_Rock_640x820px-1.png" },
+          { name: "flawless", color: "#ffffff", img: "images/Gold_WA_Flaw_Less_640x820px-3.png" }
+        ],
+        details: {
+          "Energy Rating": "A",
+          "Capacity": "8 kg",
+          "Spin Speed": "1600 rpm",
+          "Drum Material": "Stainless Steel",
+          "Special Programs": "wetClean, profiClean, Babycare, Antibac",
+          "Warranty": "2 Years (Extendable to 5)"
+        },
+        badges: ["swiss", "new"]
+      },
+      {
+        id: "wa-neostar",
+        title: "Schulthess Neostar",
+        category: "washing-machines",
+        price: 182900,
+        specs: "8 kg capacity | 1400 rpm | Energy A",
+        desc: "Our high-durability Homecare model. Simple programming software, a clear 4.3″ color display, and 35 profiClean programs. Tested for 30,000 wash cycles, ensuring lifelong performance and premium Swiss reliability.",
+        img: "images/Neostar International.png",
+        swatches: [
+          { name: "snow", color: "#ffffff", img: "images/Neostar International.png" }
+        ],
+        details: {
+          "Energy Rating": "A",
+          "Capacity": "8 kg",
+          "Spin Speed": "1400 rpm",
+          "Drum Material": "Stainless Steel",
+          "Display": "4.3″ interactive touch color",
+          "Warranty": "2 Years"
+        },
+        badges: ["swiss"]
+      },
+      {
+        id: "wa-classic-serenity",
+        title: "Schulthess Classic: Serenity",
+        category: "washing-machines",
+        price: 210000,
+        specs: "8 kg capacity | 1600 rpm | Energy A",
+        desc: "A timeless, high-performance homecare front loader. Minimalist design featuring a robust steel housing, double heat protection glass door, and a comfort opening handleless hatch.",
+        img: "images/Classic_WA_Serenity_640x820px-9.png",
+        swatches: [
+          { name: "stone", color: "#9e978e", img: "images/Classic_WA_Serenity_640x820px-9.png" }
+        ],
+        details: {
+          "Energy Rating": "A",
+          "Capacity": "8 kg",
+          "Spin Speed": "1600 rpm",
+          "Drum Material": "Stainless Steel",
+          "Safety": "Aquastop & double door glass",
+          "Warranty": "2 Years"
+        },
+        badges: ["swiss"]
+      },
+      {
+        id: "wa-classic-sublime",
+        title: "Schulthess Classic: Sublime",
+        category: "washing-machines",
+        price: 210000,
+        specs: "8 kg capacity | 1600 rpm | Energy A",
+        desc: "The sublime edition of the Classic series. Precision-balanced drum for quiet operation, intelligent dosing capability, and high spin efficiency.",
+        img: "images/Classic_WA_Sublime_640x820px.png",
+        swatches: [
+          { name: "sublime", color: "#cccccc", img: "images/Classic_WA_Sublime_640x820px.png" }
+        ],
+        details: {
+          "Energy Rating": "A",
+          "Capacity": "8 kg",
+          "Spin Speed": "1600 rpm",
+          "Special Tech": "Auto-dosing system prep",
+          "Warranty": "2 Years"
+        },
+        badges: ["swiss"]
+      },
+      {
+        id: "wa-power-aquaforce",
+        title: "Schulthess Power: Aquaforce Plus",
+        category: "washing-machines",
+        price: 235000,
+        specs: "9 kg capacity | 1600 rpm | Heavy Duty",
+        desc: "Built for active families and light commercial settings. The Aquaforce Plus handles larger volumes while saving 10% more energy. Features automatic load-matching logic.",
+        img: "images/Power_WA_Aquaforce_plus_640x820px-qtbifrv8g23ntvrzg8sxkicncembkoaqwametzvpq8.png",
+        swatches: [
+          { name: "aquaforce", color: "#ffffff", img: "images/Power_WA_Aquaforce_plus_640x820px-qtbifrv8g23ntvrzg8sxkicncembkoaqwametzvpq8.png" }
+        ],
+        details: {
+          "Capacity": "9 kg",
+          "Spin Speed": "1600 rpm",
+          "Water Protection": "Full Aquastop",
+          "Programs": "Quickwash (15 min), Sportswear",
+          "Warranty": "2 Years"
+        },
+        badges: ["swiss"]
+      },
+      {
+        id: "wa-power-astrafortis",
+        title: "Schulthess Power: Astrafortis",
+        category: "washing-machines",
+        price: 235000,
+        specs: "9 kg capacity | 1600 rpm | Heavy Duty",
+        desc: "Combining high-load efficiency with massive durability. Heavy-duty springs and shock absorbers reduce vibration, allowing silent operation even at full 1600 RPM spin cycles.",
+        img: "images/Power_WA_Astrafortis_640x820px-qqv0hcurhw3aeptfag9i4qvbliswcmevjmyod8fpj4-qta3226tfvzeukl7h71rds0w0lmdb62c92bdokgw74.png",
+        swatches: [
+          { name: "astrafortis", color: "#444241", img: "images/Power_WA_Astrafortis_640x820px-qqv0hcurhw3aeptfag9i4qvbliswcmevjmyod8fpj4-qta3226tfvzeukl7h71rds0w0lmdb62c92bdokgw74.png" }
+        ],
+        details: {
+          "Capacity": "9 kg",
+          "Spin Speed": "1600 rpm",
+          "Vibration Level": "Silent-Drive (Brushless)",
+          "Programs": "profiClean, Antibac, Eco",
+          "Warranty": "2 Years"
+        },
+        badges: ["swiss"]
+      },
+      {
+        id: "wa-leggera",
+        title: "Schulthess Leggera Series",
+        category: "washing-machines",
+        price: 155000,
+        specs: "7 kg capacity | 1400 rpm | Compact",
+        desc: "Compact elegance. The Leggera is tailored for smaller spaces without compromising on Swiss precision. Built with durable shock dampening, a robust stainless drum, and easy-dial selection.",
+        img: "images/Leggera WA4980.png",
+        swatches: [
+          { name: "leggera", color: "#ffffff", img: "images/Leggera WA4980.png" }
+        ],
+        details: {
+          "Capacity": "7 kg",
+          "Spin Speed": "1400 rpm",
+          "Dimensions": "850 x 595 x 600 mm",
+          "Programs": "25 rapid cycles",
+          "Warranty": "2 Years"
+        },
+        badges: ["swiss"]
+      },
+      {
+        id: "wt-neostar",
+        title: "Schulthess Neostar Dryer",
+        category: "tumble-dryers",
+        price: 200700,
+        specs: "8 kg capacity | Heat-pump drying",
+        desc: "Premium heat-pump tumble dryer designed to partner the Neostar washing machine. Utilizes advanced moisture tracking sensors to prevent shrinking, saving up to 50% electricity.",
+        img: "images/Neostar International (1).png",
+        swatches: [
+          { name: "snow", color: "#ffffff", img: "images/Neostar International (1).png" }
+        ],
+        details: {
+          "Capacity": "8 kg",
+          "Drying Technology": "Heat-Pump (TW)",
+          "Energy Rating": "A+++",
+          "Sensor": "Electronic humidity tracking",
+          "Warranty": "2 Years"
+        },
+        badges: ["swiss"]
+      },
+      {
+        id: "wt-gold-rose",
+        title: "Schulthess Gold: Ever Rose Dryer",
+        category: "tumble-dryers",
+        price: 274400,
+        specs: "8 kg capacity | Heat-pump | Designer finish",
+        desc: "The ultimate aesthetic match for your Ever Rose washing machine. High-efficiency heat-pump drying with luxury copper/gold finishes. Offers special textile programs like silk, wool, and activewear.",
+        img: "images/Gold_WA_Ever_Rose_640x820px.png",
+        swatches: [
+          { name: "rose", color: "#b76e79", img: "images/Gold_WA_Ever_Rose_640x820px.png" }
+        ],
+        details: {
+          "Capacity": "8 kg",
+          "Drying Tech": "Heat-Pump (TW)",
+          "Finish": "Ever Rose Metallic",
+          "Condensation Class": "A (90% capture)",
+          "Warranty": "2 Years"
+        },
+        badges: ["swiss", "new"]
+      },
+      {
+        id: "flow-signature",
+        title: "FLOW Signature Scent Detergent (1L)",
+        category: "flow-detergents",
+        price: 1490,
+        specs: "Premium Liquid Detergent | Swiss Made",
+        desc: "FLOW - Elegant, unobtrusive, and pure liquid detergent. Created with natural ingredients, highly biodegradable, and infused with a premium signature fragrance that elevates laundry care. Gentle on fibers and colors.",
+        img: "images/Schulthess_Logo_20_SM_blau_schwarz_FB_IG_YT_L.png",
+        swatches: [
+          { name: "detergent", color: "#1A8FE5", img: "images/Schulthess_Logo_20_SM_blau_schwarz_FB_IG_YT_L.png" }
+        ],
+        details: {
+          "Volume": "1.0 Liter",
+          "Origin": "Swiss Made",
+          "Loads": "Approx. 40 wash loads",
+          "Biodegradability": "98% within 28 days",
+          "Fabric compatibility": "All everyday fabrics"
+        },
+        badges: ["swiss"]
+      },
+      {
+        id: "flow-spray",
+        title: "FLOW Signature Fabric Spray (500ml)",
+        category: "flow-detergents",
+        price: 990,
+        specs: "Premium Refresher Spray",
+        desc: "Refresh your garments instantly with the official FLOW Signature scent spray. Neutralizes odors in coats, suits, sheets, and curtains without washing, leaving a subtle, luxury aroma.",
+        img: "images/Schulthess_Logo_20_SM_blau_schwarz_FB_IG_YT_L.png",
+        swatches: [
+          { name: "spray", color: "#a5cd7c", img: "images/Schulthess_Logo_20_SM_blau_schwarz_FB_IG_YT_L.png" }
+        ],
+        details: {
+          "Volume": "500 ml",
+          "Origin": "Swiss Made",
+          "Application": "Direct fabric misting",
+          "Odor removal": "Active enzymatic counter-action"
+        },
+        badges: ["swiss", "new"]
+      },
+      {
+        id: "acc-pedestal",
+        title: "Pedestal with Lint Filter Drawer",
+        category: "accessories",
+        price: 25900,
+        specs: "Ergonomic 30cm Base | Built-in filter",
+        desc: "Elevates your washer or dryer by 30cm for back-friendly loading. Features a sturdy integrated steel pedestal with a comfortable pull-out lint drawer. Helps prevent drains from clogging.",
+        img: "images/One-stop-Shop.png",
+        swatches: [
+          { name: "pedestal", color: "#444241", img: "images/One-stop-Shop.png" }
+        ],
+        details: {
+          "Height": "300 mm",
+          "Material": "Reinforced steel",
+          "Filter Drawer": "Pull-out screen type",
+          "Vibration dampening": "Heavy-duty rubber mounts"
+        },
+        badges: []
+      },
+      {
+        id: "promo-warranty",
+        title: "3-Year Warranty Extension Package",
+        category: "promotions",
+        price: 14900,
+        priceOld: 29800,
+        specs: "Full coverage parts & labor",
+        desc: "Calculate easily and transparently. Extends the standard factory warranty to 5 years total. Covers all repair costs, engineer travel time, authentic OEM spare parts, and wear-and-tear parts. 50% Off current campaign.",
+        img: "images/One-stop-Shop.png",
+        swatches: [
+          { name: "warranty", color: "#ff0000", img: "images/One-stop-Shop.png" }
+        ],
+        details: {
+          "Coverage Duration": "3 additional years (5 total)",
+          "Provider": "Swisstech Innovation SLA",
+          "Eligible Models": "All Homecare & Gold washers/dryers",
+          "Included Services": "Travel, parts, labor, diagnostic checks"
+        },
+        badges: ["action"]
+      }
+    ];
+
+    const categoryDisplayNames = {
+      'washing-machines': 'Washing Machine',
+      'tumble-dryers': 'Tumble Dryer',
+      'flow-detergents': 'FLOW Detergent',
+      'accessories': 'Accessory',
+      'promotions': 'Promotion'
+    };
+
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    // --- RENDER PRODUCTS GRID ---
+    function renderGrid() {
+      const grid = document.getElementById('catalog-grid');
+      grid.innerHTML = '';
+
+      const filtered = catalogProducts.filter(p => {
+        const matchesCategory = (activeCategory === 'all') || (p.category === activeCategory);
+        const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              p.desc.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div style="grid-column: span 3; text-align: center; padding: 4rem 0; color: var(--text-muted);">
+          <h4>No products found matching your filter or search query.</h4>
+        </div>`;
+        return;
+      }
+
+      filtered.forEach(p => {
+        // Badges HTML
+        let badgesHtml = '';
+        if (p.badges.includes('swiss')) badgesHtml += `<span class="badge-tag badge-swiss">Swiss Made</span>`;
+        if (p.badges.includes('new')) badgesHtml += `<span class="badge-tag badge-new">New</span>`;
+        if (p.badges.includes('action')) badgesHtml += `<span class="badge-tag badge-action">Action</span>`;
+
+        // Color Swatches HTML
+        let swatchesHtml = '';
+        if (p.swatches && p.swatches.length > 1) {
+          p.swatches.forEach((sw, idx) => {
+            swatchesHtml += `<button class="card-swatch ${idx === 0 ? 'active' : ''}" 
+              style="background-color: ${sw.color};" 
+              onclick="swapCardImage('${p.id}', '${sw.img}', this, event)"></button>`;
+          });
+        }
+
+        // Price tags
+        let priceHtml = '';
+        if (p.priceOld) {
+          priceHtml += `<span class="card-price-old">₹${p.priceOld.toLocaleString('en-IN')}</span>`;
+        }
+        priceHtml += `₹${p.price.toLocaleString('en-IN')}`;
+
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <div class="card-img-wrapper" onclick="openProductQuickView('${p.id}')">
+            <div class="card-badges">${badgesHtml}</div>
+            <img src="${p.img}" alt="${p.title}" class="card-img" id="img-card-${p.id}">
+            <div class="quick-view-overlay">
+              <button class="quick-view-btn">Quick View</button>
+            </div>
+          </div>
+          <div class="card-details">
+            <span class="card-category">${categoryDisplayNames[p.category] || p.category}</span>
+            <a href="javascript:void(0)" class="card-title" onclick="openProductQuickView('${p.id}')">${p.title}</a>
+            <p class="card-specs">${p.specs}</p>
+            
+            <div class="card-swatches-row">
+              <div class="card-swatches">${swatchesHtml}</div>
+              <div class="swiss-made-badge" style="font-size: 0.6rem; padding: 0.1rem 0.4rem; background: var(--bg-secondary);">
+                <span class="swiss-cross">+</span>
+                <span>Swiss</span>
+              </div>
+            </div>
+
+            <div class="card-price-row">
+              <span class="card-price-label">Price Excl GST</span>
+              <span class="card-price">${priceHtml}</span>
+            </div>
+
+            <button class="btn btn-primary card-add-btn" onclick="requestQuote('${p.id}')">Enquire Now</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Interactive card swatch logic
+    function swapCardImage(productId, newImgUrl, swatchBtn, event) {
+      event.stopPropagation();
+      const cardImg = document.getElementById(`img-card-${productId}`);
+      if (cardImg) {
+        cardImg.src = newImgUrl;
+      }
+      
+      // Update active swatch dot
+      const swatchesRow = swatchBtn.parentElement;
+      swatchesRow.querySelectorAll('.card-swatch').forEach(btn => btn.classList.remove('active'));
+      swatchBtn.classList.add('active');
+    }
+
+    // Change category filter
+    function setCategoryFilter(category, clickedBtn) {
+      activeCategory = category;
+      
+      if (clickedBtn) {
+        const tabContainer = document.getElementById('shop-tabs');
+        tabContainer.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        clickedBtn.classList.add('active');
+      }
+
+      renderGrid();
+    }
+
+    // Handle Search input
+    function handleSearch(query) {
+      searchQuery = query;
+      renderGrid();
+    }
+
+    // --- PRODUCT INQUIRY LOGIC ---
+    function requestQuote(productId) {
+      const product = catalogProducts.find(p => p.id === productId);
+      if (!product) return;
+      // Redirect to contact form and pass product details
+      window.location.href = 'contact.html?product=' + encodeURIComponent(product.title);
+    }
+
+    // --- QUICK VIEW MODAL LOGIC ---
+    function openProductQuickView(productId) {
+      const product = catalogProducts.find(p => p.id === productId);
+      if (!product) return;
+
+      const modalContent = document.getElementById('modal-content-area');
+      
+      // Technical parameters table list
+      let specsHtml = '';
+      for (const [key, value] of Object.entries(product.details)) {
+        specsHtml += `
+          <div class="modal-spec-item">
+            <span>${key}:</span>
+            <span>${value}</span>
+          </div>
+        `;
+      }
+
+      modalContent.innerHTML = `
+        <div class="modal-gallery-box">
+          <img src="${product.img}" alt="${product.title}">
+        </div>
+        <div class="modal-info-box">
+          <span class="card-category">${categoryDisplayNames[product.category] || product.category}</span>
+          <h2 class="heading-sm" style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-dark);">${product.title}</h2>
+          <p class="card-specs" style="font-size: 0.95rem; font-weight: 600; color: var(--schulthess-blue);">${product.specs}</p>
+          <p class="feature-descr" style="margin-bottom: 1rem; line-height: 1.6;">${product.desc}</p>
+          
+          <h4 class="heading-sm" style="font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.25rem;">Technical Parameters</h4>
+          <div class="modal-specs-list">${specsHtml}</div>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 1rem;">
+            <div style="display: flex; flex-direction: column;">
+              <span class="card-price-label" style="font-size: 0.7rem;">Gross Price Excl GST</span>
+              <span class="card-price" style="font-size: 2.2rem; color: var(--text-dark);">₹${product.price.toLocaleString('en-IN')}</span>
+            </div>
+            <button class="btn btn-primary" style="padding: 0.9rem 2.5rem;" onclick="requestQuote('${product.id}'); closeProductModal(null)">Enquire Now</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('product-modal').classList.add('active');
+    }
+
+    function closeProductModal(event) {
+      if (!event || event.target === document.getElementById('product-modal')) {
+        document.getElementById('product-modal').classList.remove('active');
+      }
+    }
+
+    // --- INITIALIZE PAGE ---
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGrid();
+      
+      // Mobile navbar click trigger
+      const mobileMenu = document.getElementById('mobile-menu');
+      const navMenu = document.getElementById('nav-menu');
+      mobileMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

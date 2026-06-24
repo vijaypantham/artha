@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Partner Program | Schulthess India National Importer</title>
+  <meta name="description" content="Get in touch with Swisstech Innovation, the authorized national partner for Schulthess in India. Request quotes, download engineering datasheets, or apply for our partner program.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVBAR -->
+  <nav class="navbar" id="global-nav">
+    <div class="container">
+      <a href="index.html" class="logo-container" id="nav-logo">
+        <img src="images/Schulthess_Logo_20_blau_schwarz.svg" alt="Schulthess" style="height: 38px;">
+      </a>
+
+      <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html" class="nav-link" id="nav-link-home">Home</a></li>
+        <li><a href="shop.html" class="nav-link" id="nav-link-shop">Appliance Catalog</a></li>
+        <li><a href="products.html" class="nav-link" id="nav-link-products">Products</a></li>
+        <li><a href="about.html" class="nav-link" id="nav-link-about">About Us</a></li>
+        <li><a href="contact.html" class="nav-link active" id="nav-link-contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- EXCLUSIVE TRUST BANNER -->
+  <div class="trust-banner" id="trust-badge">
+    Swisstech Innovation Pvt. Ltd. <span>Exclusive National Distributor for India</span>
+  </div>
+
+  <!-- CONTACT HERO -->
+  <header class="products-hero section-padding" id="contact-hero" style="background: var(--bg-dark); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 0;">
+        <span class="section-tag" style="color: var(--schulthess-blue);">India Distribution Hub</span>
+        <h1 class="heading-lg text-light">Connect With Our Technical Teams</h1>
+        <p class="hero-descr" style="color: #cccccc; margin: 1.5rem auto 0 auto; max-width: 700px;">
+          Submit a project specification request or register for our regional dealer/architect partner program.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTACT & FORM SECTION -->
+  <section class="section-padding" id="contact-section">
+    <div class="container contact-grid">
+      
+      <!-- Left: Importer Details -->
+      <div class="contact-info">
+        <div class="info-group" id="group-hq">
+          <span class="info-label">National Corporate Headquarters</span>
+          <span class="info-value" style="font-weight: 600; color: var(--text-dark);">
+            Swisstech Innovations Pvt. Ltd.<br>
+            Sole Authorised Channel Partner — India<br>
+            No. 102, Siemens Building, Adj. HDFC Bank,<br>
+            Irram Manzil, Main Road, Banjara Hills,<br>
+            Hyderabad, Telangana, India – 500082
+          </span>
+        </div>
+
+        <div class="info-group" id="group-support">
+          <span class="info-label">Inquiries & Certified Technical Support</span>
+          <span class="info-value" style="font-weight: 600; color: var(--text-dark);">
+            Phone: <a href="tel:+918886955099">+91 88869 55099</a> / <a href="tel:+919885655000">+91 98856 55000</a><br>
+            Email: <a href="mailto:info@swisstechinnovations.in">info@swisstechinnovations.in</a>
+          </span>
+        </div>
+
+        <div class="info-group" id="group-gateway">
+          <span class="info-label">Official Digital Gateway</span>
+          <span class="info-value">
+            <a href="https://www.swisstechinnovations.in" target="_blank" style="color: var(--schulthess-blue);">www.swisstechinnovations.in</a>
+          </span>
+        </div>
+
+        <div class="info-group" id="group-consulting">
+          <span class="info-label">Uncompromised Consulting & Layouts</span>
+          <span class="info-value">
+            Our dedicated local engineering wing works alongside corporate planners to optimize workflows, ensuring maximum laundry throughput.
+          </span>
+        </div>
+
+        <div class="info-group" id="group-engineering">
+          <span class="info-label">Certified Field Engineering</span>
+          <span class="info-value">
+            Swisstech specialists deploy precision installations, custom-calibrating detergent dosing systems to match native Indian voltage and water hardness parameters.
+          </span>
+        </div>
+
+        <div class="info-group" id="group-infrastructure">
+          <span class="info-label">Comprehensive Support Infrastructure</span>
+          <span class="info-value">
+            We back your commercial investment with direct breakdown coverage, rapid original spare parts deployment from domestic central transit warehouses, and continuous training cycles.
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Ingestion Form -->
+      <div class="contact-card">
+        <h2 class="heading-md" style="margin-bottom: 2rem; font-size: 2.2rem; border-bottom: 2px solid var(--schulthess-blue); padding-bottom: 0.5rem; display: inline-block;">Enterprise Verification</h2>
+        
+        <form class="contact-form" id="lead-form" action="#" method="POST" onsubmit="handleFormSubmit(event)">
+          <!-- Name -->
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Representative Name *</label>
+            <input class="form-input" type="text" id="contact-name" name="name" placeholder="John Doe" required>
+          </div>
+
+          <!-- Corporate Entity -->
+          <div class="form-group">
+            <label class="form-label" for="entity-name">Corporate Entity Name *</label>
+            <input class="form-input" type="text" id="entity-name" name="entity" placeholder="Acme Luxury Living" required>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Verified Corporate Email *</label>
+            <input class="form-input" type="email" id="contact-email" name="email" placeholder="john@company.com" required>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label class="form-label" for="contact-phone">Operational Telephone *</label>
+            <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+
+          <!-- Dropdown Segment -->
+          <div class="form-group form-group-full">
+            <label class="form-label" for="market-alignment">Market Vertical Alignment *</label>
+            <select class="form-select" id="market-alignment" name="alignment" required>
+              <option value="" disabled selected>Select your professional segment...</option>
+              <option value="luxury-retailer">Luxury Retailer</option>
+              <option value="interior-architect">Interior Architect</option>
+              <option value="mep-consultant">MEP Consultant</option>
+              <option value="hospitality-procurement">Hospitality Procurement Director</option>
+            </select>
+          </div>
+
+          <!-- Project Portfolio Summary -->
+          <div class="form-group form-group-full">
+            <label class="form-label" for="portfolio-summary">Current Project Portfolio Summary *</label>
+            <textarea class="form-textarea" id="portfolio-summary" name="summary" placeholder="Briefly describe ongoing projects or laundry equipment requirements..." required></textarea>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group form-group-full" style="margin-top: 1rem;">
+            <button class="btn btn-primary" type="submit" id="btn-submit-form" style="width: 100%;">
+              Submit Swisstech Enterprise Verification Application
+            </button>
+          </div>
+        </form>
+
+        <!-- Form Success State -->
+        <div id="form-success-msg" style="display: none; text-align: center; padding: 2rem 0;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--schulthess-blue)" stroke-width="2" style="width: 64px; height: 64px; margin: 0 auto 1.5rem auto;">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <h3 class="heading-sm" style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--schulthess-blue);">Application Submitted</h3>
+          <p class="feature-descr">
+            Thank you. Your verification request has been successfully transmitted. A Swisstech Application Engineer will contact you within 24 business hours.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="footer" id="global-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand" id="footer-logo">
+          <div class="footer-logo-text">SCHULTHESS<span>.IN</span></div>
+          <p class="footer-tagline">Spinning for joy. Swiss precision engineering for luxury homes and heavy industries.</p>
+          <div class="swiss-made-badge" id="swiss-made">
+            <span class="swiss-cross">+</span>
+            <span>Swiss Made Quality Since 1845</span>
+          </div>
+        </div>
+        <div class="footer-nav" id="footer-links-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Appliance Catalog</a></li>
+            <li><a href="products.html">Product Range</a></li>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-partner" id="footer-partner-col">
+          <h4 class="footer-col-title">Indian Channel Partner</h4>
+          <div class="footer-partner-card">
+            <img src="images/swisstech_logo.jpg" alt="Swisstech Innovations" class="footer-partner-logo">
+            <h4>Swisstech Innovations Pvt. Ltd.</h4>
+            <p>Sole Authorised Channel Partner and importer of Schulthess Switzerland in India.</p>
+            <p><strong>HQ:</strong> Banjara Hills, Hyderabad, India</p>
+            <p><strong>Support:</strong> +91 88869 55099 / +91 98856 55000</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Schulthess Maschinen AG. All rights reserved. Managed in India by Swisstech Innovation Pvt. Ltd.</p>
+        <p>Built under official Schulthess Marketing & Brand Guidelines.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE NAVIGATION & FORM INTERACTION JAVASCRIPT -->
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const navbar = document.getElementById('global-nav');
+
+    mobileMenu.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+
+    // Parse URL query parameters to prefill the contact form
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const product = urlParams.get('product');
+      if (product) {
+        const textarea = document.getElementById('portfolio-summary');
+        if (textarea) {
+          textarea.value = `I am interested in obtaining a quote/information for: ${product}.\n\n` + textarea.value;
+        }
+      }
+    });
+
+    // Handle verification form submission
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('lead-form');
+      const successMsg = document.getElementById('form-success-msg');
+      
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

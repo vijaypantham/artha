@@ -1,0 +1,35 @@
+# Backups and archives
+*.zip
+*.rar
+*.tar.gz
+
+# Raw documents and design guidelines
+*.pdf
+*.rtf
+*.md
+!schulthess_website/website/README.md
+
+# System files
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Scratch and temporary developer assets
+scratch/
+read_rtf.py
+
+# Ignore root-level duplicate website files
+/index.html
+/shop.html
+/products.html
+/about.html
+/contact.html
+/styles.css
+/images/
+
+# Ignore loose files in schulthess_website/ except the production website folder
+/schulthess_website/*
+!/schulthess_website/website/
+
+# Ignore reference materials
+/ReferenceMaterial/
