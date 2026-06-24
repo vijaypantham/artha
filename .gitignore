@@ -7,7 +7,7 @@
 *.pdf
 *.rtf
 *.md
-!schulthess_website/website/README.md
+!schulthess_in/website/README.md
 
 # System files
 .DS_Store
@@ -27,9 +27,9 @@ read_rtf.py
 /styles.css
 /images/
 
-# Ignore loose files in schulthess_website/ except the production website folder
-/schulthess_website/*
-!/schulthess_website/website/
+# Ignore loose files in schulthess_in/ except the production website folder
+/schulthess_in/*
+!/schulthess_in/website/
 
 # Ignore reference materials
 /ReferenceMaterial/

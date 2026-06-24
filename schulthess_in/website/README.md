@@ -12,6 +12,6 @@ This directory contains the production-ready static website assets for `schulthe
 - `images/` - Cleaned assets directory containing only the 23 referenced images (no loose layouts or files)
 
 ## Cloudflare Pages Configuration
-- **Root Directory**: `schulthess_website/website/` (or `/` if deploying from a repository containing only these static files)
+- **Root Directory**: `schulthess_in/website/` (or `/` if deploying from a repository containing only these static files)
 - **Build Command**: None (leave empty)
 - **Output Directory**: `.` (or empty)
